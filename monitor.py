@@ -3,15 +3,18 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
+import os
 import discord
 from discord import Webhook, RequestsWebhookAdapter
 from bs4 import BeautifulSoup
 import time
 import urllib.request
 
-chrome_options = Options()
+chrome_options = webdriver.ChromeOptions()
+chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
 chrome_options.add_argument("--headless")
+chrome_options.add_argument("--disable-dev-shm-usage")
+chrome_options.add_argument("--no-sandbox")
 count = 0
 links = {
     "Newmarket": "https://www.canadacomputers.com/index.php?cPath=43_557&sf=:3_3,3_4,3_5,3_6,3_7,3_8,3_9,3_12,3_29,3_30,3_31,3_32,3_33&loc=NMKT&mfr=&pr=",
@@ -27,7 +30,7 @@ new = [[] for store in stores]
 init = True
 while True:
     driver = webdriver.Chrome(
-        service=Service(ChromeDriverManager().install()), options=chrome_options
+        executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=chrome_options
     )
     driver.get(links[stores[count]])
 
