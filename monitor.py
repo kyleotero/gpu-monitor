@@ -30,7 +30,7 @@ new = [[] for store in stores]
 init = True
 while True:
     driver = webdriver.Chrome(
-        executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=chrome_options
+        service=Service(ChromeDriverManager().install()), options=chrome_options
     )
     driver.get(links[stores[count]])
 
