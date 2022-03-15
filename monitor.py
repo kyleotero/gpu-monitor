@@ -37,7 +37,7 @@ while True:
     last_h = driver.execute_script("return document.body.scrollHeight")
     while True:
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-        time.sleep(1)
+        time.sleep(0.5)
         new_h = driver.execute_script("return document.body.scrollHeight")
         if new_h == last_h:
             break
