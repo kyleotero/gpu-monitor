@@ -23,8 +23,17 @@ links = {
     "Etobicoke": "https://www.canadacomputers.com/index.php?cPath=43_557&sf=:3_3,3_4,3_5,3_6,3_7,3_8,3_9,3_12,3_29,3_30,3_31,3_32,3_33&loc=ETOB&mfr=&pr=",
     "Markham": "https://www.canadacomputers.com/index.php?cPath=43_557&sf=:3_3,3_4,3_5,3_6,3_7,3_8,3_9,3_12,3_29,3_30,3_31,3_32,3_33&loc=MU&mfr=&pr=",
     "Mississauga": "https://www.canadacomputers.com/index.php?cPath=43_557&sf=:3_3,3_4,3_5,3_6,3_7,3_8,3_9,3_12,3_29,3_30,3_31,3_32,3_33&loc=MISS&mfr=&pr=",
+    "Online": "https://www.canadacomputers.com/index.php?cPath=43_557&sf=:3_3,3_4,3_5,3_6,3_7,3_8,3_9,3_12,3_29,3_30,3_31,3_32,3_33&mfr=&pr=",
 }
-stores = ["Newmarket", "North York", "Brampton", "Etobicoke", "Markham", "Mississauga"]
+stores = [
+    "Newmarket",
+    "North York",
+    "Brampton",
+    "Etobicoke",
+    "Markham",
+    "Mississauga",
+    "Online",
+]
 old = [[] for store in stores]
 new = [[] for store in stores]
 init = True
