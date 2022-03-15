@@ -37,7 +37,7 @@ while True:
     last_h = driver.execute_script("return document.body.scrollHeight")
     while True:
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-        time.sleep(2)
+        time.sleep(4)
         new_h = driver.execute_script("return document.body.scrollHeight")
         if new_h == last_h:
             break
@@ -78,6 +78,7 @@ while True:
                 embed.add_field(name="Product:", value=title.text)
                 embed.add_field(name="Price:", value=price.text)
                 embed.add_field(name="Store", value=stores[count])
+                embed.footer(text="test")
                 webhook.send(file=img, embed=embed)
     if init == False:
         old[count] = new[count]
